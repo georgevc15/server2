@@ -39,7 +39,11 @@ module.exports = function(app) {
                 res.json({info: 'error during find dog', error: err});
             };
             if (dog) {
-                res.json({info: 'dog found successfully', data: dog});
+                //res.json({info: 'dog found successfully', data: dog});
+                res.render('show_dog.ejs',
+                     { petinfo: 
+                        { id: dog.id, name: dog.name, age: dog.age,  type: dog.type }
+                    });
             } else {
                 res.json({info: 'dog not found'});
             }

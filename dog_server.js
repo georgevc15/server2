@@ -40,6 +40,8 @@ app.use(bodyParser.urlencoded({
 
 var dogRoutes = require('./routes/dog.js')(app);
 
+app.use(express.static('public'));
+
 var server = app.listen(port, function() {
 	console.log("Server running on port "+port);
 });
